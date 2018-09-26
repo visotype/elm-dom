@@ -1,5 +1,5 @@
 # visotype/elm-dom
-## Base utilities to help Elm developers build UI component libraries
+## Base utilities to help Elm developers build UI libraries
 
 If you are using Elm, you probably know all of the reasons why Elm is great. If
 you've been using Elm for a while, you probably also have some ideas about
@@ -8,10 +8,12 @@ of community packages is how take advantage of the capabilities of the Elm
 language to write better view code for Elm sites and apps. "Better" can mean
 different things to different people, but one goal shared by different community
 UI packages has been to rely less on literal templating of HTML markup by
-introducing some sort of abstraction at the element and/or component levels.
-While there can be a tradeoff in API design between explicit specification and
-abstraction, good abstractions can help to facilitate rapid prototyping, code
-sharing, and improved maintainability as sites and apps scale.
+introducing some sort of abstraction at the element and/or component levels
+(*I'll avoid the word "component" from here on to avoid any possible confusion
+with React-style stateful components*). While there can be a tradeoff in API
+design between explicit specification and abstraction, good abstractions can
+help to facilitate rapid prototyping, code sharing, and improved maintainability
+as sites and apps scale.
 
 UI abstraction has not been a focus of core Elm language development since the
 [early days](https://www.infoq.com/presentations/Elm)
@@ -39,18 +41,19 @@ implementations of things that a lot of users in the community would like to
 have.
 
 Surveying this situation, I wanted to make it easier for developers in the Elm
-community to create, share, and collaborate on libraries of reusable UI
-functions and components. Toward this end, the `visotype/elm-dom` package offers
-a basic set of utilities for UI development in Elm, including a data type for
-storing information about an individual node, a comprehensive set of functions
-that allow you to build nodes by updating this information, and a simple
-rendering function that outputs Elm `Html`. The package does not implement any
-specific set of UI elements/components and it is not tied to any external
-dependencies (like a CSS framework). That means you can use this package to
-create whatever components you need, with whatever external frameworks you like
-to use. The benefit you get is a standard type that can be used across all of
-your custom UI functions and a thoroughly tested set of utility functions for
-building, modifying, and rendering nodes.
+community to create, share, and collaborate on libraries of reusable
+functions for building user interfaces. Toward this end, the `visotype/elm-dom`
+package offers a basic set of utilities for UI development in Elm, including a
+data type for storing information about an individual node, a comprehensive set
+of functions that allow you to build nodes by updating this information, and a
+simple rendering function that outputs Elm `Html`. The package does not
+implement any specific set of UI constructors (beyond the generic `element`
+constructor) and it is not tied to any external dependencies (like a CSS
+framework). That means you can use this package to create whatever reusable
+parts you need, with whatever external frameworks you like to use. The benefit
+you get is a standard type that can be used across all of your custom UI
+functions and a thoroughly tested set of utility functions for building,
+modifying, and rendering nodes.
 
 To get started, take a look at any of the examples below, then head over to the
 [core module documentation](https://package.elm-lang.org/packages/visotype/elm-dom/latest/Dom).
