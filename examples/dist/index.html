@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Examples</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="assets/button.js"></script>
+  <script src="assets/hover.js"></script>
+  <script src="assets/capture.js"></script>
+  <script src="assets/parse.js"></script>
+</head>
+
+<body>
+  <div class="bg-info" style="height: 100%; min-height: 100vh;">
+    <div class="container">
+      <div class="row" style="height: 10vh;"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="button-example"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="hover-example"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="capture-example"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="parse-example"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  var buttonExample = Elm.Button.init({
+    node: document.getElementById('button-example')
+  });
+  var hoverExample = Elm.Hover.init({
+    node: document.getElementById('hover-example')
+  });
+  var captureExample = Elm.Capture.init({
+    node: document.getElementById('capture-example')
+  });
+  var parseExample = Elm.Parse.init({
+    node: document.getElementById('parse-example')
+  });
+  </script>
+</body>
+</html>

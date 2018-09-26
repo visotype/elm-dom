@@ -1,0 +1,20 @@
+{
+    "type": "package",
+    "name": "visotype/elm-dom",
+    "summary": "Base utilities to help Elm developers build UI component libraries",
+    "license": "BSD-2-Clause",
+    "version": "1.0.0",
+    "exposed-modules": [
+        "Dom"
+    ],
+    "elm-version": "0.19.0 <= v < 0.20.0",
+    "dependencies": {
+        "elm/core": "1.0.0 <= v < 2.0.0",
+        "elm/json": "1.0.0 <= v < 2.0.0",
+        "elm/virtual-dom": "1.0.2 <= v < 2.0.0"
+    },
+    "test-dependencies": {
+        "elm-explorations/test": "1.1.0 <= v < 2.0.0",
+        "elm/html": "1.0.0 <= v < 2.0.0"
+    }
+}
