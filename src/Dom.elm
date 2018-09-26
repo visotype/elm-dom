@@ -211,8 +211,8 @@ import Json.Decode exposing (Decoder)
 import Dom.Internal as Internal
 
 
-{-| `Dom.Element` is an [opaque type] that stores an internal record, defined
-[here]. The internal record contains all of the data needed to construct an
+{-| `Dom.Element` is an [opaque type] that stores an internal record,
+[defined here]. The internal record contains all of the data needed to construct an
 Elm `Html` node. By using a record to temporarily store data about a node, we
 can partially construct that node with some data, but delay building it until
 all of the data has been assembled.
@@ -229,7 +229,7 @@ the [Html.Lazy] optimization; see [here] for a very simple example of how you
 would implement that with this package).
 
 [opaque type]: https://medium.com/@ghivert/designing-api-in-elm-opaque-types-ce9d5f113033
-[here]: https://package.elm-lang.org/packages/visotype/elm-dom/latest/Dom-Internal#Data
+[defined here]: https://package.elm-lang.org/packages/visotype/elm-dom/latest/Dom-Internal#Data
 [element]: https://package.elm-lang.org/packages/visotype/elm-dom/latest/Dom#element
 [render]: https://package.elm-lang.org/packages/visotype/elm-dom/latest/Dom#render
 [Html.Lazy]: https://package.elm-lang.org/packages/elm/html/latest/Html-Lazy
