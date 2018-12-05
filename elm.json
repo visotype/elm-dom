@@ -3,7 +3,7 @@
     "name": "visotype/elm-dom",
     "summary": "Base utilities to help Elm developers build UI libraries",
     "license": "BSD-2-Clause",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "exposed-modules": [
         "Dom",
         "Dom.Internal"
