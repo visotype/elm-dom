@@ -1,9 +1,9 @@
-# visotype/elm-dom
+# visotype/elm-dom [![Build Status](https://travis-ci.com/visotype/elm-dom.svg?branch=master)](https://travis-ci.com/visotype/elm-dom)
 **Base utilities to help Elm developers build UI libraries**
 
 ## Summary
 
-I created this package to make it easier for developers in the Elm community to create, share, and collaborate on libraries of reusable functions for building user interfaces. The package does not implement any specific set of UI constructors (beyond the generic `element` constructor) and it is not tied to any external dependencies (like a CSS framework). That means you can use this package to create whatever reusable parts you need, with whatever external frameworks you like to use. 
+I created this package to make it easier for developers in the Elm community to create, share, and collaborate on libraries of reusable functions for building user interfaces. The package does not implement any specific set of UI constructors (beyond the generic `element` constructor) and it is not tied to any external dependencies (like a CSS framework). That means you can use this package to create whatever reusable parts you need, with whatever external frameworks you like to use.
 
 ### API Features
 
@@ -37,16 +37,16 @@ To run these examples in the browser, download [examples/dist](https://github.co
 
 ## Background and Motivation
 
-This package is a complete rewrite that includes core parts of several of my earlier 
+This package is a complete rewrite that includes core parts of several of my earlier
 attempts at a UI library for Elm. The most recent iteration included the packages
 [elm-semantic-dom](https://github.com/danielnarey/elm-semantic-dom)
-and 
+and
 [elm-modular-ui](https://github.com/danielnarey/elm-modular-ui), which have since
-been archived. These previous efforts helped me to identify the core problem I 
-was trying to solve and to eliminate the parts of my code that were just gratuitous 
-abstraction or unnecessary duplication of functionality. The following summarizes 
-what I learned in the process and why I think the current package is a step in the 
-right direction. 
+been archived. These previous efforts helped me to identify the core problem I
+was trying to solve and to eliminate the parts of my code that were just gratuitous
+abstraction or unnecessary duplication of functionality. The following summarizes
+what I learned in the process and why I think the current package is a step in the
+right direction.
 
 ### Interest in UI abstraction among Elm community contributors
 
