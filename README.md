@@ -52,9 +52,16 @@ view model =
 The second version looks more verbose, but you'll notice that the `Html`
 package's pattern of nested lists has been replaced with pipeline style code
 that reads from left to right and top to bottom. This can come in handy when
-generating more complex markup.
+generating more complex markup. You'll also notice that HTML properties are
+encoded as strings rather than as function names. That makes it simpler to
+pass them as arguments to UI constructors.
 
-Let's say you want to wrap this widget in a function and share it across applications. As a `Dom.Element`, the outermost `div` is capable of being modified by appending or prepending child elements, adding attributes, swapping the tag, and so on, which is not possible with rendered Elm `Html`. This pattern enables UI library developers to package sets of minimally-defined reusable parts that users can then modify to meet their needs.
+Let's say you want to wrap this widget in a function and share it across
+applications. As a `Dom.Element`, the outermost `div` is capable of being
+modified by appending or prepending child elements, adding attributes, swapping
+the tag, and so on, which is not possible with rendered Elm `Html`. This pattern
+enables UI library developers to bundle sets of minimally-defined reusable parts
+that users can then modify to meet their needs.
 
 ## Motivation and Design Considerations
 
