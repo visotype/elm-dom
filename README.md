@@ -1,22 +1,77 @@
 # visotype/elm-dom [![Build Status](https://travis-ci.com/visotype/elm-dom.svg?branch=master)](https://travis-ci.com/visotype/elm-dom)
 **Base utilities to help Elm developers build UI libraries**
 
-## Summary
+## Usage Example
+
+Here's a simple UI from the
+[Official Elm Guide](https://guide.elm-lang.org/architecture/buttons.html):
+
+```elm
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+
+...
+
+view : Model -> Html Msg
+view model =
+  div []
+    [ button [ onClick Decrement ] [ text "-" ]
+    , div [] [ text (String.fromInt model) ]
+    , button [ onClick Increment ] [ text "+" ]
+    ]
+```
+
+Here's how you might implement it with **visotype/elm-dom**:
+
+```elm
+import Html exposing (Html)
+import Dom exposing (..)
+
+...
+
+view : Model -> Html Msg
+view model =
+  element "div"
+    |> appendChildList
+      [ element "button"
+        |> addAction ("click", Decrement)
+        |> appendText "-"
+
+      , element "div"
+        |> appendText (String.fromInt model)
+
+      , element "button"
+        |> addAction ("click", Increment)
+        |> appendText "+"
+
+      ]
+    |> render
+
+```
+
+The second version looks more verbose, but you'll notice that the `Html`
+package's pattern of nested lists has been replaced with pipeline style code
+that reads from left to right and top to bottom. This can come in handy when
+generating more complex markup.
+
+Let's say you want to wrap this widget in a function and share it across applications. As a `Dom.Element`, the outermost `div` is capable of being modified by appending or prepending child elements, adding attributes, swapping the tag, and so on, which is not possible with rendered Elm `Html`. This pattern enables UI library developers to package sets of minimally-defined reusable parts that users can then modify to meet their needs.
+
+## Motivation and Design Considerations
 
 I created this package to make it easier for developers in the Elm community to create, share, and collaborate on libraries of reusable functions for building user interfaces. The package does not implement any specific set of UI constructors (beyond the generic `element` constructor) and it is not tied to any external dependencies (like a CSS framework). That means you can use this package to create whatever reusable parts you need, with whatever external frameworks you like to use.
 
-### API Features
+## API Features
 
 - a standard data type for storing information about an individual node in Elm's virtual DOM
 - a comprehensive set of functions that allow you to build nodes by updating this information (analogous to methods in the [DOM Element API](https://developer.mozilla.org/en-US/docs/Web/API/Element#Methods), but really just Elm record updates)
 - a simple rendering function that outputs Elm `Html`
 
-### Dependencies
+## Dependencies
 
 Elm platform 0.19 and the `elm/core`, `elm/json`, and `elm/virtual-dom`
 packages. Nothing else!
 
-### Tests
+## Tests
 
 Record update and rendering functions have been tested to ensure functional
 equivalence with Elm `Html` constructors. To verify, you can install the
@@ -35,7 +90,7 @@ To get started, take a look at any of the examples below, then head over to the
 
 To run these examples in the browser, download [examples/dist](https://github.com/visotype/elm-dom/tree/master/examples/dist) and initialize a local web server.
 
-## Background and Motivation
+## Background on the Project
 
 This package is a complete rewrite that includes core parts of several of my earlier
 attempts at a UI library for Elm. The most recent iteration included the packages
